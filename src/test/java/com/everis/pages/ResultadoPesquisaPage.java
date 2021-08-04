@@ -31,4 +31,10 @@ public class ResultadoPesquisaPage extends BasePage {
 		log("Adicionou o produto [" + nomeProduto + "] ao carrinho");
 	}
 
+	public void acessarProduto(String nomeProduto) {
+		WebElement tituloProduto = driver.findElement(
+				By.xpath("//*[@class='product-name'][@title='"+nomeProduto+"']"));
+		tituloProduto.click();
+		log("Acessou o produto: "+nomeProduto);
+	}
 }
