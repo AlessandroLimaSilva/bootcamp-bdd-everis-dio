@@ -13,15 +13,33 @@ public class HomePage extends BasePage {
 	
 	@FindBy(name = "submit_search")
 	protected WebElement botaoLupaBuscar;
-	
+
+	@FindBy(xpath = "//*[@id='SubmitLogin']")
+	protected WebElement botaoRealizarLogin;
+
+	@FindBy(xpath = "//*[@id='email']")
+	protected WebElement campoEmail;
+
+	@FindBy(xpath = "//*[@id='passwd']")
+	protected WebElement campoPassword;
+
 	public HomePage() {
 		PageFactory.initElements(Hooks.getDriver(), this);
 	}
 
 	public void pesquisarProduto(String nomeProduto) {
+
 		campoBusca.sendKeys(nomeProduto);
 		botaoLupaBuscar.click();
 		log("Pesquisou pelo produto: " + nomeProduto);
 	}
+
+	public void realizarLogin(){
+		campoEmail.sendKeys("aleteste@gmail.com");
+		campoPassword.sendKeys("aleteste");
+		botaoRealizarLogin.click();
+		log("Realizou o login");
+	}
+
 
 }

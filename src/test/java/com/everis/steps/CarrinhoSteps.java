@@ -1,5 +1,6 @@
 package com.everis.steps;
 
+import io.cucumber.java.pt.E;
 import org.junit.Assert;
 
 import com.everis.pages.CarrinhoPage;
@@ -22,5 +23,22 @@ public class CarrinhoSteps {
 				carrinhoPage.oProdutoApresentouQuantidadeEsperada(nomeProduto,quantidade));
 	}
 
-	
+
+	@E("^acessa o checkout$")
+	public void acessaOCheckout() {
+		CarrinhoPage carrinhoPage = new CarrinhoPage();
+		carrinhoPage.AcessarCheckout();
+	}
+
+	@E("^confirma o endereco de entrega$")
+	public void confirmaEnderecoEntrega() {
+		CarrinhoPage carrinhoPage = new CarrinhoPage();
+		carrinhoPage.AcessarCheckoutAdress();
+	}
+
+	@E("^escolhe a forma de transporte$")
+	public void escolheFormaTransporte(){
+		CarrinhoPage carrinhoPage = new CarrinhoPage();
+		carrinhoPage.escolherFormaTransporte();
+	}
 }

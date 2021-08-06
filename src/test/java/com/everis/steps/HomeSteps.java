@@ -18,5 +18,11 @@ public class HomeSteps {
 		HomePage homePage = new HomePage();
 		homePage.pesquisarProduto(nomeProduto);
 	}
+
+	@E("^realiza o login")
+	public void realizarLogin(){
+		HomePage homePage = new HomePage();
+		homePage.realizarLogin();
+	}
 	
 }
